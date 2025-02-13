@@ -1,0 +1,25 @@
+{
+  "name": "cluster",
+  "version": "1.0.0",
+  "description": "A node JS app for implementing node Cluster used to run multiple instances of Node.js that can distribute workloads among their application threads.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arafatDU/node-cluster.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/arafatDU/node-cluster/issues"
+  },
+  "homepage": "https://github.com/arafatDU/node-cluster#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
