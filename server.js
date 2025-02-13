@@ -1,5 +1,6 @@
 const cluster = require("cluster");
 const os = require("os");
+const fs = require("fs");
 
 const totalCPUs = os.cpus().length;
 
@@ -22,8 +23,13 @@ if (cluster.isPrimary) {
 	const PORT = 8000;
 	
 	app.get("/", (req, res) => {
-		return res.json({message: `Hello from Express Server ${process.pid}`});
-	});
+    fs.readFile("./sample.txt", (err, data) => {
+      if (err) {
+        console.log(err);
+      }
+      return res.json({message: `Hello from Express Server ${process.pid}`, data: `${data}`});
+    });
+  });
 	
 	app.listen(PORT, () => 
 		console.log(`Server started at port ${PORT}`)
